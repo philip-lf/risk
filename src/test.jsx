@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
+import accessToken from './secret.js';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
 
 class Test extends Component {
   render() { 
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGhpbGlwLWxmIiwiYSI6ImNqNmUxczZjcjAxdzUzMm11N203Mm43azkifQ.IOxzd05jEhxaKm4QkYXtmg';
+    mapboxgl.accessToken = accessToken;
     var map = new mapboxgl.Map({
         container: 'root',
-        style: 'mapbox://styles/mapbox/dark-v9',
-        zoom: 13
+        style: 'mapbox://styles/mapbox/streets-v9'
     });
 
     return (
