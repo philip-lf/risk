@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Test from './test.jsx';
 import './App.css';
+import accessToken from './secret.js';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
 class App extends Component {
+  componentDidMount() {
+    mapboxgl.accessToken = accessToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-74.50, 40],
+        zoom: 9
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <Test/>
-        </header>
+      <div>
+        <div id="map"/>
       </div>
     );
   }
