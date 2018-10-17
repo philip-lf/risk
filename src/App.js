@@ -8,9 +8,9 @@ class App extends Component {
     mapboxgl.accessToken = accessToken;
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
+        style: 'mapbox://styles/philip-lf/cjncsbyzp1lro2smfatrek0tq',
         center: [-74.50, 40],
-        zoom: 9
+        zoom: 1
     });
   }
 
